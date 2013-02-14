@@ -1,0 +1,33 @@
+<NotepadPlus>
+    <Project name="SpaceBallz">
+        <File name=".buildpath" />
+        <File name="build.settings" />
+        <File name="config.lua" />
+        <File name="class_Ball.lua" />
+        <File name="class_Block.lua" />
+        <File name="class_Paddle.lua" />
+        <File name="backstory.lua" />
+        <File name="enhancements.gdoc" />
+        <File name="game.lua" />
+        <File name="gamemenu.lua" />
+        <File name="gameover.lua" />
+        <File name="gamestate.lua" />
+        <File name="main.lua" />
+        <File name="menu.lua" />
+        <File name="win.lua" />
+        <File name="world.lua" />
+        <File name="workspace" />
+        <Folder name="Images">
+            <File name="Images\asteroid.png" />
+            <File name="Images\blackbackground.png" />
+            <File name="Images\earth.png" />
+            <File name="Images\star-tile-far-away.png" />
+            <File name="Images\neptune.png" />
+            <File name="Images\newgame.png" />
+        </Folder>
+        <Folder name="Mobs">
+            <File name="Mobs\Lesser_Planet.txt" />
+            <File name="Mobs\Lesser_Asteroid.txt" />
+        </Folder>
+    </Project>
+</NotepadPlus>
