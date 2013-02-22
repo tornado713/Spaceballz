@@ -11,4 +11,8 @@ settings = {
 			UIApplicationExitsOnSuspend = true
 		},
 	},
+	androidPermissions =
+    {
+         "android.permission.INTERNET",
+    },
 }
