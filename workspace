@@ -7,6 +7,7 @@
         <File name="class_Block.lua" />
         <File name="class_Paddle.lua" />
         <File name="backstory.lua" />
+        <File name="db.lua" />
         <File name="enhancements.gdoc" />
         <File name="game.lua" />
         <File name="gamemenu.lua" />
