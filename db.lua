@@ -13,16 +13,24 @@ function db.new()
 	local path = system.pathForFile("data.db", system.DocumentsDirectory)
 	database = sqlite3.open(path)
 	
-	function database:initialize()
-		self:exec[[
-			create table item (id integer primary key, name, bool active);
-			insert into item(null, 'Diapers', true);
-			create table purchase (id integer primary key, itemid, date, amount, active);
+	print("before execute")
+	--function database:initialize()
+		database:exec[[
+			create table if not exists item (id integer primary key, name text, active integer);
 		]]
-	end
+			
+			--insert into item (id, name, active) values (null, 'Diapers', 1);
+		database:exec[[
+			PRAGMA foreign_keys = ON;
+			create table if not exists purchase (id integer primary key, 
+				itemid REFERENCES item(id), date integer, amount integer, active integer);
+				
+			insert into purchase (id, itemid, date, amount, active) values (null, 2, DATETIME('now'), 33.30, 1);
+		]]
+	--end
+	print("after execute")
 	
 	return database
 end
-
 
 return db

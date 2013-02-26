@@ -8,7 +8,7 @@ local function initialize(self, event)
 end
 
 local db = database.new()
-db:initialize()
+--db:initialize()
 
 local function onSystemEvent( event )
         if( event.type == "applicationExit" ) then              
@@ -16,7 +16,9 @@ local function onSystemEvent( event )
         end
 end
 
-for row in db.database:nrows("SELECT * FROM item") do
+print("before item loop")
+for row in db:nrows("SELECT * FROM item") do
+	print("found items")
   local t = display.newText(row.name, 20, 30 * row.id, null, 16)
   t:setTextColor(255,0,255)
 end
