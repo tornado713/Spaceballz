@@ -16,20 +16,25 @@ function db.new()
 	print("before execute")
 	--function database:initialize()
 		database:exec[[
-			create table if not exists item (id integer primary key, name text, active integer);
+			PRAGMA foreign_keys = ON;
+			drop table if exists purchase;
+			drop table if exists item;
+			CREATE TABLE item (id integer PRIMARY KEY, name text, active integer);
+			CREATE TABLE purchase (id integer PRIMARY KEY, itemid integer,
+				date integer, amount integer, active integer,
+				FOREIGN KEY(itemid) REFERENCES item(id));
 		]]
 			
-			--insert into item (id, name, active) values (null, 'Diapers', 1);
+			
 		database:exec[[
-			PRAGMA foreign_keys = ON;
-			create table if not exists purchase (id integer primary key, 
-				itemid REFERENCES item(id), date integer, amount integer, active integer);
-				
+			insert into item (id, name, active) values (null, 'Diapers', 1);
+			insert into item (id, name, active) values (null, 'Prius Gas', 1);
 			insert into purchase (id, itemid, date, amount, active) values (null, 2, DATETIME('now'), 33.30, 1);
 		]]
 	--end
 	print("after execute")
 	
+print( "version " .. sqlite3.version() )
 	return database
 end
 
