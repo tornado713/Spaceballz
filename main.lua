@@ -1,11 +1,7 @@
--- hides the status bar while app is running
+require "CiderDebugger";-- hides the status bar while app is running
 display.setStatusBar (display.HiddenStatusBar)
 
 local database = require "db"
-
-local function initialize(self, event)
-	self:initialize()
-end
 
 local db = database.new()
 --db:initialize()
